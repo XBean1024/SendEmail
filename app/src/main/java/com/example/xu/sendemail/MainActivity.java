@@ -26,7 +26,8 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         super.run();
-                        SendEmail.send("596928539@qq.com","crash","哈哈哈，没有崩溃，逗你呢" );
+                        String[] strings ={"596928539@qq.com","596928539@qq.com"};
+                        SendEmail.send(strings,"c2222rash","哈哈哈，没有崩溃，逗你呢" );
                     }
                 }.start();
             }

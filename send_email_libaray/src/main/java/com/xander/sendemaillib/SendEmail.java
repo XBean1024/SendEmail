@@ -43,8 +43,14 @@ public class SendEmail {
       sms.sendTextMail(mailInfo);//发送文体格式 
       sms.sendHtmlMail(mailInfo);//发送html格式
 	}
+
+	/**
+	 * @param toAddress  可以接受一组邮箱
+	 * @param emailTitle
+	 * @param emailContent
+	 */
 	public static void send(
-							String toAddress,
+							String[] toAddress,
 							String emailTitle,
 							String emailContent ){
 		//这个类主要是设置邮件 git config --global user.email 596928539@qq.com
@@ -56,7 +62,10 @@ public class SendEmail {
 		mailInfo.setUserName("xu596928539");//用户名
 		mailInfo.setPassword("liux1228");//您的邮箱密码
 
-		mailInfo.setToAddress(toAddress);
+		for (int i = 0; i < toAddress.length; i++) {
+			mailInfo.setToAddress(toAddress[i]);
+		}
+
 		mailInfo.setSubject(emailTitle);
 		mailInfo.setContent(emailContent);
 		//这个类主要来发送邮件
